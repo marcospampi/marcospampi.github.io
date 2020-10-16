@@ -1973,9 +1973,9 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             const scopeUrl = this.scope.registration.scope;
             const requestUrlObj = this.adapter.parseUrl(req.url, scopeUrl);
             
-            // skip video fetching
             if( req.url.match(/(\.mp4)$|(\.webm)$|(\.mkv)$/ugi))
                 return;
+
             if (req.headers.has('ngsw-bypass') || /[?&]ngsw-bypass(?:[=&]|$)/i.test(requestUrlObj.search)) {
                 return;
             }
