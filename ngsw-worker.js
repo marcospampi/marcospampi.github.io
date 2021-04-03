@@ -1973,7 +1973,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             const scopeUrl = this.scope.registration.scope;
             const requestUrlObj = this.adapter.parseUrl(req.url, scopeUrl);
 
-            if( req.url.match(/(\.mp4)$|(\.webm)$|(\.mkv)$/ugi))
+            if( req.url.match(/(\.mp4)|(\.webm)|(\.mkv)/ugi))
                 return;
 
             if (req.headers.has('ngsw-bypass') || /[?&]ngsw-bypass(?:[=&]|$)/i.test(requestUrlObj.search)) {
