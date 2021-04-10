@@ -1972,10 +1972,9 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             const req = event.request;
             const scopeUrl = this.scope.registration.scope;
             const requestUrlObj = this.adapter.parseUrl(req.url, scopeUrl);
-
-            if( req.url.match(/(\.mp4)|(\.webm)|(\.mkv)|(\.m3u8)|(\.ts)/ugi))
-                return;
-
+            
+             if( req.url.match(/\.(mp4|m4a|m4p|m4b|m4r|m4v|mkv|m3u8|m3u|webm)$/))
+     		return;
             if (req.headers.has('ngsw-bypass') || /[?&]ngsw-bypass(?:[=&]|$)/i.test(requestUrlObj.search)) {
                 return;
             }
